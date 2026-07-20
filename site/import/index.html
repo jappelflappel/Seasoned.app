@@ -30,8 +30,11 @@
   </main>
   <script>
     const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
     const payload = params.get('payload');
-    const deepLink = payload
+    const deepLink = id
+      ? `seasoned://share?id=${encodeURIComponent(id)}`
+      : payload
       ? `seasoned://share?payload=${encodeURIComponent(payload)}`
       : 'seasoned://share';
     const button = document.getElementById('open-app');
