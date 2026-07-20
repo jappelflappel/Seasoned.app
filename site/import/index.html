@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Openen in Seasoned</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 80% 0%, #f9ddd3, transparent 38%), #fffaf6; color: #171313; }
+    main { width: min(440px, 100%); padding: 34px 28px 30px; border-radius: 30px; background: rgba(255,255,255,.9); box-shadow: 0 24px 70px rgba(92,52,40,.16); text-align: center; }
+    .mark { width: 66px; height: 66px; margin: 0 auto 22px; display: grid; place-items: center; border-radius: 21px; background: #cf5a43; color: white; font-size: 30px; }
+    h1 { margin: 0 0 10px; font-size: 36px; line-height: 1; letter-spacing: -.04em; }
+    p { margin: 0 auto 24px; color: #736d6a; font-size: 17px; line-height: 1.45; }
+    .button { display: block; padding: 16px 20px; border-radius: 999px; background: #cf5a43; color: white; text-decoration: none; font-size: 17px; font-weight: 800; }
+    #fallback { display: none; margin: 20px 0 0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark">🍴</div>
+    <h1>Openen in Seasoned</h1>
+    <p>Dit recept staat klaar om in Seasoned te worden gecontroleerd en opgeslagen.</p>
+    <a class="button" id="open-app" href="seasoned://share">Open Seasoned</a>
+    <p id="fallback">Als Seasoned niet automatisch opent, tik dan op de knop hierboven.</p>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const payload = params.get('payload');
+    const deepLink = payload
+      ? `seasoned://share?payload=${encodeURIComponent(payload)}`
+      : 'seasoned://share';
+    const button = document.getElementById('open-app');
+    button.href = deepLink;
+    window.setTimeout(() => { window.location.href = deepLink; }, 180);
+    window.setTimeout(() => { document.getElementById('fallback').style.display = 'block'; }, 1400);
+  </script>
+</body>
+</html>
