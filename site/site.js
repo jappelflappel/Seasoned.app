@@ -9,6 +9,11 @@
     document.querySelectorAll('[data-copy-nl]').forEach((element) => {
       element.textContent = element.dataset[language === 'nl' ? 'copyNl' : 'copyEn'];
     });
+    document.querySelectorAll('[data-image-nl]').forEach((image) => {
+      image.src = image.dataset[language === 'nl' ? 'imageNl' : 'imageEn'];
+      const alt = image.dataset[language === 'nl' ? 'altNl' : 'altEn'];
+      if (alt) image.alt = alt;
+    });
     if (toggle) {
       toggle.textContent = language === 'nl' ? 'EN' : 'NL';
       toggle.setAttribute('aria-label', language === 'nl' ? 'Switch to English' : 'Wissel naar Nederlands');
