@@ -1,9 +1,16 @@
-# Seasoned recipe links
+# Seasoned website and recipe links
 
-This public repository only hosts the small landing page used for Seasoned recipe links.
-The Seasoned app remains in the private app repository.
+This public repository hosts the static Seasoned website on GitHub Pages. The
+iOS source code remains in the private app repository.
 
-Enable GitHub Pages in **Settings → Pages** and choose **GitHub Actions** as the source.
-The app uses links under:
+Published routes:
 
-`https://jappelflappel.github.io/Seasoned.app/import`
+- `https://seasoned-app.com/`
+- `https://seasoned-app.com/import/`
+- `https://seasoned-app.com/privacy/`
+- `https://seasoned-app.com/terms/`
+- `https://seasoned-app.com/copyright/`
+- `https://seasoned-app.com/support/`
+
+GitHub Pages deploys the contents of `site` through
+`.github/workflows/deploy-pages.yml` after a push to `main`.
