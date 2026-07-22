@@ -26,7 +26,7 @@
       <h3>Recipe imports</h3>
       <p>When you import a public recipe website, Seasoned requests that page to prepare an editable draft. A TikTok import uses the shared caption and TikTok's public oEmbed preview where available. Instagram pages are not scraped; an Instagram import uses only the link and caption explicitly provided through sharing. Seasoned does not remotely download TikTok or Instagram videos. A local image, PDF or video is processed only when you explicitly select or share that file with Seasoned.</p>
       <h3>AI-assisted processing</h3>
-      <p>The current App Store Release configuration does not send recipe text, images or cooking notes to a generative-AI provider. Recipe structuring and quantity conversion in that release run on the device. If a future public release enables online AI, Seasoned will explain the recipients, purpose and retention before sending content and update this policy.</p>
+      <p>When a user imports a recipe from a photo or text, or requests an AI estimate or change proposal, the relevant recipe text, OCR text, selected image and/or recipe ingredients and steps are sent through the Seasoned Cloudflare Worker to its configured generative-AI provider. This is used only to complete the requested feature. The app does not send recipe content in the background.</p>
       <h3>Speech and photos</h3>
       <p>Seasoned accesses the camera or photo library only after you choose to take or select a recipe photo. Microphone and speech-recognition access is requested only when you choose to dictate a cooking note or process a file you explicitly shared. Apple may process speech under its own terms. Seasoned stores the resulting text, not a continuous microphone recording.</p>
       <h3>Recipe sharing</h3>
@@ -86,7 +86,7 @@
       <h3>Recepten importeren</h3>
       <p>Wanneer je een openbare receptensite importeert, vraagt Seasoned die pagina op om een aanpasbaar concept te maken. Een TikTok-import gebruikt de gedeelde beschrijving en, indien beschikbaar, TikToks openbare oEmbed-preview. Instagram-pagina's worden niet gescrapt; een Instagram-import gebruikt alleen de link en beschrijving die via delen worden aangeleverd. Seasoned downloadt niet op afstand video's van TikTok of Instagram. Een lokale afbeelding, pdf of video wordt alleen verwerkt wanneer je dat bestand zelf selecteert of met Seasoned deelt.</p>
       <h3>Verwerking met AI</h3>
-      <p>De huidige App Store Release-configuratie stuurt geen recepttekst, afbeeldingen of kooknotities naar een generatieve-AI-provider. Receptstructurering en hoeveelheidsconversie in die release gebeuren op het apparaat. Als een toekomstige openbare release online AI inschakelt, legt Seasoned vooraf ontvangers, doel en bewaartermijn uit en wordt dit beleid bijgewerkt.</p>
+      <p>Wanneer je een recept importeert vanaf een foto of tekst, of een AI-schatting of wijzigingsvoorstel opvraagt, worden de relevante recepttekst, OCR-tekst, geselecteerde afbeelding en/of ingrediënten en stappen via de Seasoned Cloudflare Worker naar de geconfigureerde generatieve-AI-provider gestuurd. Dit gebeurt alleen om de gevraagde functie uit te voeren. De app stuurt geen receptinhoud op de achtergrond.</p>
       <h3>Spraak en foto's</h3>
       <p>Seasoned gebruikt camera of fotobibliotheek pas nadat je een receptfoto maakt of kiest. Toegang tot microfoon en spraakherkenning wordt alleen gevraagd wanneer je een kooknotitie inspreekt of een bestand verwerkt dat je zelf hebt gedeeld. Apple kan spraak onder eigen voorwaarden verwerken. Seasoned bewaart de uitgeschreven tekst, niet een doorlopende microfoonopname.</p>
       <h3>Recepten delen</h3>
@@ -108,7 +108,7 @@
       </table>
 
       <h2>4. Dienstverleners en doorgifte</h2>
-      <p>Afhankelijk van de functies die je gebruikt, kunnen gegevens worden verwerkt door Apple (iCloud, StoreKit en Speech), Google (AdMob en toestemmingsbeheer), Cloudflare (tijdelijke receptlinks), GitHub (websitehosting), en de bronwebsite of TikTok-endpoint dat voor een import wordt gebruikt. Sommige partijen werken buiten de EER en gebruiken hun toepasselijke doorgiftewaarborgen. Hun eigen privacybeleid geldt daarnaast.</p>
+      <p>Afhankelijk van de functies die je gebruikt, kunnen gegevens worden verwerkt door Apple (iCloud, StoreKit en Speech), Google (AdMob en toestemmingsbeheer), Cloudflare en de door de Seasoned Worker gebruikte generatieve-AI-provider, GitHub (websitehosting), en de bronwebsite of TikTok-endpoint dat voor een import wordt gebruikt. Sommige partijen werken buiten de EER en gebruiken hun toepasselijke doorgiftewaarborgen. Hun eigen privacybeleid geldt daarnaast.</p>
 
       <h2>5. Bewaartermijnen</h2>
       <ul>
